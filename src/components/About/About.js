@@ -9,7 +9,7 @@ const About = () => {
 
     useEffect(() => {
         const getAbout = async () => {
-            const res = await axios.get('http://localhost:3000/api/about/About-144-867-936');
+            const res = await axios.get('https://portofolio-api-mfr.herokuapp.com/api/about/About-144-867-936');
             console.log(res);
             setAbout(res.data.about);
             setFed(res.data.fed);

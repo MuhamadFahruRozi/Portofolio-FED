@@ -23,7 +23,7 @@ const HomeEdit = () => {
     const [preview, setPreview] = useState('')
     useEffect(() => {
         const getHome = async () => {
-            const res = await axios.get('http://localhost:3000/api/home/Home-955-60-816');
+            const res = await axios.get('https://portofolio-api-mfr.herokuapp.com/api/home/Home-955-60-816');
             console.log(res);
             const myHome = res.data;
             setHome(myHome.desc);
@@ -36,7 +36,7 @@ const HomeEdit = () => {
     const changeHome = (e) => {
         e.preventDefault();
         
-        const url ='http://localhost:3000/api/home/Home-955-60-816';
+        const url ='https://portofolio-api-mfr.herokuapp.com/api/home/Home-955-60-816';
 
         if(gambar === ""){
             let formData = new FormData();

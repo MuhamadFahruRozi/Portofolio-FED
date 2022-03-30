@@ -10,7 +10,7 @@ const ProjectDetail = () => {
     
     useEffect(() => {
         const getData = async () => {
-            const res = await axios.get(`http://localhost:3000/api/projects/${idetail.slug}`)
+            const res = await axios.get(`https://portofolio-api-mfr.herokuapp.com/api/projects/${idetail.slug}`)
             console.log(res.data)
             setDetail(res.data.Project)
             setImage(res.data.Image)

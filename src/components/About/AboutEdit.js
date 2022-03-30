@@ -25,7 +25,7 @@ const AboutEdit = ({ user }) => {
     const timerender = useRef(null)
     useEffect(() => {
         const getAbout = async () => {
-            const res = await axios.get('http://localhost:3000/api/about/About-144-867-936');
+            const res = await axios.get('https://portofolio-api-mfr.herokuapp.com/api/about/About-144-867-936');
             console.log(res);
             setAbout(res.data.about.desc);
             setFed(res.data.fed);
@@ -106,7 +106,7 @@ const AboutEdit = ({ user }) => {
         })
         // newFrontEnd => formData.append('image', newFrontEnd
         // formData.append('image', newFed);
-        const url ='http://localhost:3000/api/about/fed';
+        const url ='https://portofolio-api-mfr.herokuapp.com/api/about/fed';
 
         const upload = axios.post(url, formData).then(res => {
             alert("Front-End skill(s) successfuly added!")
@@ -132,7 +132,7 @@ const AboutEdit = ({ user }) => {
             formData.append('image', data)
         })
         
-        const url ='http://localhost:3000/api/about/bed';
+        const url ='https://portofolio-api-mfr.herokuapp.com/api/about/bed';
 
         const upload = axios.post(url, formData).then(res => {
             alert("Back-End skill(s) successfuly added!")
@@ -154,7 +154,7 @@ const AboutEdit = ({ user }) => {
         let formData = new FormData();
         formData.append('desc', about);
         
-        const url ='http://localhost:3000/api/about/About-144-867-936';
+        const url ='https://portofolio-api-mfr.herokuapp.com/api/about/About-144-867-936';
 
         axios.put(url, formData).then(res => {
             console.log(res)
@@ -166,14 +166,14 @@ const AboutEdit = ({ user }) => {
     }
 
     const deleteFed = (delfed) => {
-        const res = axios.delete(`http://localhost:3000/api/about/fed/${delfed}`);
+        const res = axios.delete(`https://portofolio-api-mfr.herokuapp.com/api/about/fed/${delfed}`);
         const remainingFed = fed.filter((result) => result.slug !== delfed)
         setFed(remainingFed)
         console.log(res)
     }
 
     const deleteBed = (delbed) => {
-        const res = axios.delete(`http://localhost:3000/api/about/bed/${delbed}`);
+        const res = axios.delete(`https://portofolio-api-mfr.herokuapp.com/api/about/bed/${delbed}`);
         const remainingBed = bed.filter((result) => result.slug !== delbed)
         setBed(remainingBed)
         console.log(res)

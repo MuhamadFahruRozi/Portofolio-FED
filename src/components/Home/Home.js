@@ -6,7 +6,7 @@ const Home = ( { passHomeData }) => {
     
     useEffect(() => {
         const getHome = async () => {
-            const res = await axios.get('http://localhost:3000/api/home/Home-955-60-816');
+            const res = await axios.get('https://portofolio-api-mfr.herokuapp.com/api/home/Home-955-60-816');
             console.log(res);
             const myHome = res.data;
             setHome(myHome);

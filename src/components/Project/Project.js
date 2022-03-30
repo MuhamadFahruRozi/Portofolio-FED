@@ -9,7 +9,7 @@ const Project = ({user}) => {
     const [projectPerPage] = useState(4)
     useEffect(() => {
         const getlist = async () => {
-            const res = await axios.get('http://localhost:3000/api/projects')
+            const res = await axios.get('https://portofolio-api-mfr.herokuapp.com/api/projects')
             console.log(res.data)
             setProlist(res.data)
         }
@@ -25,7 +25,7 @@ const Project = ({user}) => {
     }
 
     const onDeletePro = (delpro) => {
-        const res = axios.delete(`http://localhost:3000/api/projects/${delpro}`);
+        const res = axios.delete(`https://portofolio-api-mfr.herokuapp.com/api/projects/${delpro}`);
         const remainingProList = prolist.filter((result) => result.slug !== delpro)
         setProlist(remainingProList)
         console.log(res)

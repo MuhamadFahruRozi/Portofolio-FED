@@ -62,7 +62,7 @@ const ProjectNew = () => {
         })
         
 
-        const url ='http://localhost:3000/api/projects';
+        const url ='https://portofolio-api-mfr.herokuapp.com/api/projects';
 
         axios.post(url, formData).then(res => {
             console.log(res)

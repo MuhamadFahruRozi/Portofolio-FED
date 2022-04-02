@@ -223,7 +223,15 @@
 }
 
 .login-button.disabled{
-  color:white;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  border-radius: 7px;
+  width: 90%;
+  margin: 20px auto 0;
+  font-size: 20px;
   background-color:rgb(96, 99, 255);
   opacity: 50%;
 }

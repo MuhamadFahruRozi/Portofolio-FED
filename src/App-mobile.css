@@ -212,6 +212,8 @@
 .login-button{
   display: flex;
   justify-self: center;
+  align-items: center;
+  text-align: center;
   background-color:rgb(96, 99, 255);
   color: white;
   border-radius: 7px;

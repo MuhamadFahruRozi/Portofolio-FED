@@ -11,7 +11,6 @@ const ProjectDetail = () => {
     useEffect(() => {
         const getData = async () => {
             const res = await axios.get(`https://portofolio-api-mfr.herokuapp.com/api/projects/${idetail.slug}`)
-            console.log(res.data)
             setDetail(res.data.Project)
             setImage(res.data.Image)
         }
@@ -26,9 +25,7 @@ const ProjectDetail = () => {
                     <img src={detail.thumbImg_url} alt="" />
                 </div>
                 <div className="detail">
-                    {/* <pre> */}
                     {detail.desc}
-                    {/* </pre> */}
                 </div>
             <Carousel slides={image} key={image.pic_id} />
             </div>

@@ -8,25 +8,12 @@ const AboutEdit = ({ user }) => {
     const [about, setAbout] = useState('')
     const [fed, setFed] = useState([])
     const [bed, setBed] = useState([])
-    // const [resInput, setResInput] = useState(0)
     const [refresh, setRefresh] = useState(0)
 
-    // if(resInput !== resInput+1){
-    //     setRefresh(data => data+1)
-    // }
-
-    // if(resInput === 1){
-        
-    //     // const interval = setInterval(() => {
-    //     //     getAbout();
-
-    //     // }, 2 * 1000)
-    // }
     const timerender = useRef(null)
     useEffect(() => {
         const getAbout = async () => {
             const res = await axios.get('https://portofolio-api-mfr.herokuapp.com/api/about/About-144-867-936');
-            console.log(res);
             setAbout(res.data.about.desc);
             setFed(res.data.fed);
             setBed(res.data.bed)
@@ -38,8 +25,6 @@ const AboutEdit = ({ user }) => {
     const [prevFed, setPrevFed] = useState([])
     const [newFed, setNewFed] = useState([])
     const handleFileFED = (e) => {
-        // const name = "FED-"+Math.floor(Math.random() * 100 + 1)
-        // console.log(name)
         const files = e.target.files;
         const selectedFilesArray = Array.from(files)
 
@@ -47,35 +32,9 @@ const AboutEdit = ({ user }) => {
             return URL.createObjectURL(gbr)
         });
 
-        // const imageUpload = imageArray.map( async (up) => {
-        //     return await fetch(up);
-        // })
-
-        // const reader = new FileReader();
-        // reader.onload = () => {
-        //     if(reader.readyState === 2) {
-        //         setPrevFed(reader.result)
-        //     }
-        // }
-        // reader.readAsDataURL(e.target.files[0])
-        
-        // setPrevFed((prevImages) => prevImages.concat(imageArray))
-        // setNewFed((prevImages) => prevImages.concat(selectedFilesArray))
         setPrevFed(imageArray)
         setNewFed(selectedFilesArray)
-
-        // const getBlob = () => {
-        //     const config = { responseType: 'blob' };
-        //     const blobUrl = prevFed;
-        //     const bl = axios.get(blobUrl, config).then(response => {
-        //         new File([response.data], __filename);       
-        //     });
-        //     setNewFed(bl.data)
-        // }
-        // getBlob();
     }
-    console.log(prevFed)
-    console.log(newFed)
     
     const [prevBed, setPrevBed] = useState([])
     const [newBed, setNewBed] = useState([])
@@ -90,38 +49,24 @@ const AboutEdit = ({ user }) => {
         setPrevBed(imageArray)
         setNewBed(selectedFilesArray)
     }
-    console.log(prevBed)
-    console.log(newBed)
-    
     
     const onSubmitFED = async (e) => {
         e.preventDefault()
-        // if(!prevFed) {
-        //     alert('Please input Front-End skills')
-        // }
         
         let formData = new FormData();
         newFed.forEach((data) => {
             formData.append('image', data)
         })
-        // newFrontEnd => formData.append('image', newFrontEnd
-        // formData.append('image', newFed);
+        
         const url ='https://portofolio-api-mfr.herokuapp.com/api/about/fed';
 
-        const upload = axios.post(url, formData).then(res => {
+        axios.post(url, formData).then(res => {
             alert("Front-End skill(s) successfuly added!")
-            console.log(res);
         }).catch(err =>{
             console.log(err)
         })
-        // .then(setRefresh(old => old+1))
-        // const selectedFilesArray = Array.from(newFed)
-        // const fedArray = selectedFilesArray.map((gbr) => {
-        //     return URL.createObjectURL(gbr)
-        // });
-        // setFed(...fed, fedArray)
+        
         timerender.current = setTimeout(() => setRefresh(data => data+1), 6000);        
-        console.log(upload)
     }
 
     const onSubmitBED = async (e) => {
@@ -134,15 +79,13 @@ const AboutEdit = ({ user }) => {
         
         const url ='https://portofolio-api-mfr.herokuapp.com/api/about/bed';
 
-        const upload = axios.post(url, formData).then(res => {
+        axios.post(url, formData).then(res => {
             alert("Back-End skill(s) successfuly added!")
-            console.log(res)
         }).catch(err =>{
             console.log(err)
         })
         
         timerender.current = setTimeout(() => setRefresh(data => data+1), 6000);
-        console.log(upload)
     }
 
     const onSubmitBio = (e) => {
@@ -157,7 +100,6 @@ const AboutEdit = ({ user }) => {
         const url ='https://portofolio-api-mfr.herokuapp.com/api/about/About-144-867-936';
 
         axios.put(url, formData).then(res => {
-            console.log(res)
             alert("Bio successfuly changed!")
         }).catch(err =>{
             console.log(err)
@@ -166,17 +108,15 @@ const AboutEdit = ({ user }) => {
     }
 
     const deleteFed = (delfed) => {
-        const res = axios.delete(`https://portofolio-api-mfr.herokuapp.com/api/about/fed/${delfed}`);
+        axios.delete(`https://portofolio-api-mfr.herokuapp.com/api/about/fed/${delfed}`);
         const remainingFed = fed.filter((result) => result.slug !== delfed)
         setFed(remainingFed)
-        console.log(res)
     }
 
     const deleteBed = (delbed) => {
-        const res = axios.delete(`https://portofolio-api-mfr.herokuapp.com/api/about/bed/${delbed}`);
+        axios.delete(`https://portofolio-api-mfr.herokuapp.com/api/about/bed/${delbed}`);
         const remainingBed = bed.filter((result) => result.slug !== delbed)
         setBed(remainingBed)
-        console.log(res)
     }
 
     return (
@@ -208,9 +148,6 @@ const AboutEdit = ({ user }) => {
                                 (prevFed.length > 3 ? (
                                     <p className="over-upload">
                                         You can upload up to 3 images! <br/>
-                                        {/* <span>
-                                            Please delete <b>{prevFed.length - 12}</b> image{prevFed.length-12 === 1 ? "" : "s"}
-                                        </span> */}
                                     </p>
                                 ) : (
                                     <button className="upload-button" onClick={() => {
@@ -231,10 +168,6 @@ const AboutEdit = ({ user }) => {
                                             src={gbr} alt="" 
                                             width="250px"
                                              />
-                                            {/* <button onClick={() => setPrevFed(prevFed.filter((e) => e !== gbr))} >
-                                                delete
-                                            </button> */}
-                                            {/* <p>{index+1}</p> */}
                                         </div>
                                     )
                                 })
@@ -263,9 +196,6 @@ const AboutEdit = ({ user }) => {
                                 (prevBed.length > 3 ? (
                                     <p className="over-upload">
                                         You can upload up to 3 images! <br/>
-                                        {/* <span>
-                                            Please delete <b>{prevBed.length - 12}</b> image{prevBed.length-12 === 1 ? "" : "s"}
-                                        </span> */}
                                     </p>
                                 ) : (
                                     <button className="upload-button" onClick={() => {
@@ -284,13 +214,8 @@ const AboutEdit = ({ user }) => {
                                         <div key={index} className="preview">
                                             <img
                                             src={gbr} alt="" 
-                                            // height="200" 
                                             width="250px"
                                             />
-                                            {/* <button onClick={() => setPrevBed(prevBed.filter((e) => e !== gbr))} >
-                                                delete
-                                            </button> */}
-                                            {/* <p>{index+1}</p> */}
                                         </div>
                                     )
                                 })

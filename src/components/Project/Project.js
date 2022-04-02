@@ -10,7 +10,6 @@ const Project = ({user}) => {
     useEffect(() => {
         const getlist = async () => {
             const res = await axios.get('https://portofolio-api-mfr.herokuapp.com/api/projects')
-            console.log(res.data)
             setProlist(res.data)
         }
         getlist();
@@ -25,10 +24,9 @@ const Project = ({user}) => {
     }
 
     const onDeletePro = (delpro) => {
-        const res = axios.delete(`https://portofolio-api-mfr.herokuapp.com/api/projects/${delpro}`);
+        axios.delete(`https://portofolio-api-mfr.herokuapp.com/api/projects/${delpro}`);
         const remainingProList = prolist.filter((result) => result.slug !== delpro)
         setProlist(remainingProList)
-        console.log(res)
     }
     return (
         <div className="main">
@@ -41,7 +39,6 @@ const Project = ({user}) => {
                             onDeletePro={onDeletePro}
                             user={user}  /> 
                         ))
-                        // prolist.map((project) => ( <ProjectList key={project.project_id} id={project._id} img={project.thumbImg_url} title={project.title} description={project.desc} onDeletePro={onDeletePro} /> ))
                     }
                 </div>
                 <Pagination projectPerPage={projectPerPage} totalProject={prolist.length} 

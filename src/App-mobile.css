@@ -25,8 +25,6 @@
   "main main main"
   "foot foot foot"
   ;
-  /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
-  /* grid-template-columns: auto 1fr auto; */
 }
 
 .menubar{
@@ -51,13 +49,10 @@
 }
 
 .content{
-  /* background:rgb(245, 245, 245); */
   max-width: 900px;
   height: 100%;
-  /* min-height: 526px; */
   margin-left: auto;
   margin-right: auto;
-  /* box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2); */
   padding-bottom: 20px;
 }
 
@@ -179,38 +174,7 @@
   color:rgb(58, 58, 58);
   /* color: white; */
   width: 50px;
-  /* -webkit-animation:fbanim 4s linear infinite;
-  -moz-animation:fbanim 4s linear infinite;
-  animation-name: fbanim 4s linear infinite; */
-  
 }
-
-/* @keyframes fbanim{
-  0% {
-    transform: rotateX(0deg);
-  }
-  100% {
-    transform: rotateX(360deg);
-  }
-}
-
-@-moz-keyframes fbanim{
-  0% {
-    transform: rotateX(0deg);
-  }
-  100% {
-    transform: rotateX(360deg);
-  }
-}
-
-@-webkit-keyframes fbanim{
-  0% {
-    transform: rotateX(0deg);
-  }
-  100% {
-    transform: rotateX(360deg);
-  }
-} */
 
 .login{
   display: flex;
@@ -443,14 +407,6 @@
   margin: 10px auto 0px;
 }
 
-/* pcsize
-.name-label {
-  width: 15%;
-  margin-top: 6px;
-  margin-left: 70px;
-  background-color: red;
-} */
-
 .input-form {
   float: left;
   width: 75%;
@@ -486,7 +442,6 @@
   /* text-indent: 20px; */
   margin: 15px 10% 0;
   white-space: pre-line;
-  /* font-family: "Roboto Slab"; */
 }
 
 .portrait{
@@ -611,21 +566,6 @@ input[type="file"]{
   transition: .3s ease;
 }
 
-/* pcsize only opacity
-.overlay {
-  position: absolute;
-  border-radius: 50%;
-  display: block;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .3s ease;
-} */
-
 .overlay label{
   margin-left: 3.7rem;
   margin-top: 2.3rem;
@@ -694,17 +634,6 @@ label i {
   border-radius: 10px;
   overflow: hidden;
 }
-
-/* pcsize
-.card{
-  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-  margin: 1rem;
-  transition: 0.3s;
-  max-width: 415px;
-  height: 440px;
-  border-radius: 10px;
-  overflow: hidden;
-} */
 
 .card:hover {
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
@@ -824,47 +753,10 @@ label i {
   /* clip-path: polygon(0 0, 50% 0, 100% 50%, 50% 100%, 0 100%); */
 }
 
-/* pcsize
-.pagination{
-  background-color:red;
-  display: flex;
-  justify-content: center;
-  margin: 10px auto 0;
-  height: 40px;
-  bottom: 0;
-}
-
-.page-link{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  font-size: 20px;
-  width: 40px;
-  cursor: pointer;
-  color: rgb(46, 46, 46);
-}
-
-.page-link.active{
-  background-color: rgb(207, 207, 207);
-  cursor: default;
-  bottom: -5px;
-} */
-
-/* note */
-/* .aboutme{
-    width: 300px;
-} */
-
 .project-title{
  text-align: center;
  padding: 15px 0 10px;
 }
-
-/* .detail-project{
-  text-align: justify;
-  margin: 0 30px 0;
-} */
 
 /* mobile */
 .left-arrow{
@@ -887,41 +779,7 @@ padding-top: 10px;
 
 .webskills{
   padding: 15px 0 15px;
-  /* -webkit-animation:webskill-animation 1s normal;
-  -moz-animation:webskill-animation normal;
-  animation-name: webskill-animation normal; */
 }
-
-/* @keyframes webskill-animation{
-  0% {
-    position: absolute;
-    left: -88px;
-  }
-  100% {
-    position: absolute;
-    left: 0;
-  }
-}
-@-moz-keyframes webskill-animation{
-  0% {
-    position: absolute;
-    left: -88px;
-  }
-  100% {
-    position: absolute;
-    left: 0;
-  }
-}
-@-webkit-keyframes webskill-animation{
-  0% {
-    position: absolute;
-    left: -88px;
-  }
-  100% {
-    position: absolute;
-    left: 0;
-  }
-} */
 
 .res-border{
   margin: 10px auto;
@@ -970,13 +828,6 @@ hr{
   margin: auto;
 }
 
-/* pcsize
-.skills{
-  margin: 0 auto 0px;
-  min-height: 250px;
-  border:black solid;
-} */
-
 .skills .title{
   background-color: red;
   text-align: center;
@@ -1001,12 +852,6 @@ hr{
   justify-content: center;
 }
 
-/* pcsize
-.frontend .frontlogo{
-    background-color: rgb(4, 0, 255);
-    display: flex;
-} */
-
 .single-skill{
   margin: 0 10px 0;
   position: relative;
@@ -1026,17 +871,6 @@ hr{
   width: 300px;
 }
 
-/* pcsize
-.row.new-image{
-    border: black;
-    border-width: 2px;
-    border-radius: 7px;
-    border-style: solid;
-    margin: 20px 100px 20px;
-    min-height: 100px;
-    background-color: white;
-} */
-
 .row.new-image .input-form{
   border-style:dashed;
   background-color: white;
@@ -1047,18 +881,6 @@ hr{
   margin: 20px auto 7px;
   
 }
-
-/* pcsize
-.row.new-image .input-form{
-    border-style:dashed;
-    background-color: white;
-    border-width: 2px;
-    border-radius: 10px;
-    width: 300px;
-    height: 70px;
-    margin: 10px auto 7px;
-    
-  } */
 
 .all-upload-images{
   display: flex;
@@ -1082,21 +904,10 @@ hr{
   height: 80%;
 }
 
-/* pcsize
-.preview{
-  margin: 20px 10px 0;
-} */
-
 .preview p{
   font-size: 15px;
   text-align: center;
 }
-
-/* pcsize
-.preview p{
-    font-size: 30px;
-    text-align: center;
-  } */
 
 .upload-image-button{
   display: flex;
@@ -1127,11 +938,6 @@ hr{
   margin-bottom: 10px;
 }
 
-/* .aboutbio{
-  text-align: justify;
-  margin: 15px 10px 0;
-} */
-
 .project-desc{
   text-align: justify;
 }
@@ -1152,9 +958,6 @@ hr{
   width: 74%;
 }
 
-/* .save-about.disabled, .savehome.disabled, .save-project.disabled {
-} */
-
 .must-input{
   color: red;
 }
@@ -1167,44 +970,7 @@ hr{
   color: white;
 }
 
-/* pcsize
-@media (min-width:500px){
-  .footer{
-    color: white;
-    background: rgb(58, 58, 58);
-    grid-area: foot;
-    font-size: 23px;
-    min-height: 83px;
-  }
-
-  .content{
-    background:rgb(245, 245, 245);
-    max-width: 900px;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-  }
-
-  .input-form textarea{
-    height: 400px;
-    width: 670px;
-  }
-
-  .save-about{
-    margin: 0 145px 20px;
-    width: 670px; 
-  }
-} */
-
-/* .input-form.thumbnail{
-  background-color:blue;
-  width: 700px;
-} */
-
 .prevThumb{
-  /* width: 300px;
-  background-color: aquamarine; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1286,18 +1052,4 @@ hr{
     margin: 15px 20% 0;
     white-space: pre-line;
   }
-
-  .preview.thumbnail-images, .preview.all-images{
-    /* height: 100%; */
-  }
-  
-  /* .socialmedia{
-    margin: 10px auto 10px;
-    font-size: 30px;
-    text-align: center;
-    position: relative;
-    top: 10%;
-    background-color: aqua;
-  } */
-
 }

@@ -10,9 +10,7 @@ const WebSkills = ({isibed, isifed, onDeleteFED, onDeleteBED, user}) => {
                     {isifed.map((fed) => (
                         <div className="single-skill" key={fed.slug}>
                             <img className="skill-image" src={fed.pic_url} alt="" />
-                            {/* <label key={fed._id} htmlFor="feddel" className="dellabel"><RiDeleteBack2Fill /></label> */}
                             {user && <i className='dellabel' onClick={() => onDeleteFED(fed.slug)}><RiDeleteBack2Fill /></i>}
-                            {/* <button className="feddel" id="feddel" onClick={() => console.log(fed._id)}>del</button> */}
                         </div>
                     ))}
                 </div>

@@ -26,11 +26,8 @@ const Auth = ({ authentication }) => {
         user()
     },[])
 
-    console.log(match)
-
     const login = (e) => {
         e.preventDefault();
-        console.log(e);
         authentication();
         navigate('/homeedit')
     }

@@ -10,7 +10,6 @@ const Menu = () => {
                     <li><Link className="goto" to="/">Home</Link></li>
                     <li><Link className="goto"  to="/project">Project</Link></li>
                     <li><Link className="goto"  to="/about">About</Link></li>
-                    {/* <li><Link className="goto "  to="/profile"  >Profile</Link></li> */}
                 </ul>
             </Nav>
         </div>

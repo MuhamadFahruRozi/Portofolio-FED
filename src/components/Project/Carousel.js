@@ -26,7 +26,6 @@ const Carousel = ({ slides }) => {
     return (
 
         <div className="carousel">
-        {/* <section className="slider" style={{ textAlign: "center"}}> */}
             <MdOutlineArrowBackIos className="left-arrow" onClick={prevSlide} />
             <MdOutlineArrowForwardIos className="right-arrow" onClick={nextSlide} />
             {slides.map((sd, index) => {
@@ -39,10 +38,8 @@ const Carousel = ({ slides }) => {
                     </>
                     )}
                     </div>
-                    // className={index === gambar ? "slide active" : "slide"} key={index}
                 )
             })}
-        {/* </section>         */}
         </div>
     )
 }

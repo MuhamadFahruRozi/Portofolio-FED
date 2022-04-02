@@ -3,28 +3,12 @@ import axios from 'axios'
 import { MdFileUpload } from 'react-icons/md'
 
 const HomeEdit = () => {
-    // const [profilePicture, setProfilePicture] = useState('')
-    // const [isiProfile, setIsiProfile] = useState('')
-    // const onSubmitHome = (e) => {
-    //     e.preventDefault()
-
-    //     if(!profilePicture | !isiProfile) {
-    //         alert('Please fill your home input')
-    //     }
-
-    //     onAddHome({ profilePicture, isiProfile })
-
-    //     setProfilePicture('')
-    //     setIsiProfile('')
-    // }
-
     const [home, setHome] = useState('')
     const [gambar, setGambar] = useState('')
     const [preview, setPreview] = useState('')
     useEffect(() => {
         const getHome = async () => {
             const res = await axios.get('https://portofolio-api-mfr.herokuapp.com/api/home/Home-955-60-816');
-            console.log(res);
             const myHome = res.data;
             setHome(myHome.desc);
             setPreview(myHome.pic_url);
@@ -42,7 +26,6 @@ const HomeEdit = () => {
             let formData = new FormData();
             formData.append('desc', home)
             axios.put(url, formData).then(res => {
-                console.log(res)
                 alert("Home successfuly changed!")
             }).catch(err =>{
                 console.log(err)
@@ -52,7 +35,6 @@ const HomeEdit = () => {
             formData.append('image', gambar);
             formData.append('desc', home)
             axios.put(url, formData).then(res => {
-                console.log(res)
                 alert("Home successfuly changed!")
             }).catch(err =>{
                 console.log(err)

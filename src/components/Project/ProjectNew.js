@@ -65,7 +65,6 @@ const ProjectNew = () => {
         const url ='https://portofolio-api-mfr.herokuapp.com/api/projects';
 
         axios.post(url, formData).then(res => {
-            console.log(res)
             alert("Project successfuly added!")
         }).catch(err =>{
             console.log(err)

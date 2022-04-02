@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from 'axios'
 import { useParams } from "react-router-dom";
+import Carousel from "./Carousel";
 
 const ProjectNew = () => {
     const [projectID, setProjectID] = useState('')
@@ -12,15 +13,13 @@ const ProjectNew = () => {
     const [active, setActive] = useState("false")
     const [adress, setAdress] = useState('')
     const [description, setDesciption] = useState('')
-    const [proImages, setProImages] = useState('')
-    const [prevImages, setPrevImages] = useState('')
+    const [images, setImages] = useState([])
 
     const idetail = useParams();
 
     useEffect(() => {
         const getData = async () => {
             const res = await axios.get(`https://portofolio-api-mfr.herokuapp.com/api/projects/${idetail.slug}`)
-            console.log(res.data)
             const myData = res.data.Project;
             const myImages = res.data.Image;
             setProjectID(myData.project_id)
@@ -32,7 +31,7 @@ const ProjectNew = () => {
             setAdress(myData.adress)
             setProjectID(myData.project_id)
             setDesciption(myData.desc)
-            setPrevImages(myImages)
+            setImages(myImages)
         }
         getData();
     }, [idetail])
@@ -47,18 +46,6 @@ const ProjectNew = () => {
             }
         }
         reader.readAsDataURL(e.target.files[0])
-    }
-
-    const handleImages = (e) => {
-        const files = e.target.files;
-        const selectedFilesArray = Array.from(files)
-
-        const imagesArray = selectedFilesArray.map((gbr) => {
-            return URL.createObjectURL(gbr)
-        });
-
-        setProImages(selectedFilesArray)
-        setPrevImages(imagesArray)
     }
 
     const gitLineOption = (e) => {
@@ -85,24 +72,10 @@ const ProjectNew = () => {
             formData.append('thumbImg', thumb);    
         }
         axios.put(url, formData).then(res => {
-            console.log(res)
             alert("Project successfuly changed!")
         }).catch(err =>{
             console.log(err)
         })
-
-        // if(proImages !== ""){
-        //     proImages.forEach((pic) => {
-        //         formData.append('images', pic)
-        //     })
-        // }
-        // formData.append('thumbImg', thumb);
-        // formData.append('desc', description)
-        // images.forEach((pic) => {
-        //     formData.append('images', pic)
-        // })
-        
-        console.log({description, title, projectID, adress, gitAdress, thumb, proImages})
     };
 
     return (
@@ -210,61 +183,11 @@ const ProjectNew = () => {
                         </div>
                     </div>
                 </div>
-                <div className="row new-image">
-                    <div className="input-form">
-                        <label htmlFor="project-images" 
-                        className="imageLabel">
-                            Choose Project Images
-                        </label>
-                        <input type="file" 
-                        onChange={handleImages} 
-                        name="project-images" 
-                        id="project-images"
-                        multiple />
-                    </div>
-                    <div className="upload-image-button">
-                            {
-                                prevImages.length > 0 &&
-                                (prevImages.length > 12 ? (
-                                    <p className="over-upload">
-                                        You can upload up to 12 images! <br/>
-                                    </p>
-                                ) : (
-                                    <></>
-                                ))
-                            }
-                    </div>
-                    <div className="all-upload-images">
-                    {
-                        prevImages &&
-                        prevImages.map((gbr, index) => {
-                            return(
-                                <div key={index} className="preview">
-                                    <img
-                                    src={gbr.pic_url} alt="" 
-                                    height="200" 
-                                    width="200"
-                                    />
-                                    <p>{index+1}</p>
-                                </div>
-                            )
-                        })
-                    }
-                    </div>
+                <div>
+                <Carousel slides={images} key={images.pic_id} />
                 </div>
                 <div className="newProject-upload-button">
-                    {/* {
-                        previewImages.length === 0 ||
-                        previewImages.length > 12 ||
-                        preThumb.length === 0 ||
-                        projectID.length < 5 ||
-                        title.length < 5 ||
-                        description.length < 10 ? (
-                            <input type="submit" value="Upload Project" className="save-project disabled" disabled/>
-                        ) : ( */}
-                            <input type="submit" value="Upload Project" className="save-project"/>
-                        {/* )
-                    } */}
+                    <input type="submit" value="Upload Project" className="save-project"/>
                 </div>
             </form>
             </div>

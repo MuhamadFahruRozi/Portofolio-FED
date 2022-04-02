@@ -711,7 +711,7 @@ label i {
 }
 
 .project__body .project__image{
-  width: 415px;
+  width: 348px;
   height: 210px;
   overflow: hidden;
 }
@@ -1073,6 +1073,15 @@ hr{
   margin: 10px 10px 0px;
 }
 
+.preview.thumbnail-images, .preview.all-images{
+  width: 270px;
+}
+
+.prev-images-new{
+  width: 100%;
+  height: 80%;
+}
+
 /* pcsize
 .preview{
   margin: 20px 10px 0;
@@ -1278,6 +1287,10 @@ hr{
     white-space: pre-line;
   }
 
+  .preview.thumbnail-images, .preview.all-images{
+    /* height: 100%; */
+  }
+  
   /* .socialmedia{
     margin: 10px auto 10px;
     font-size: 30px;

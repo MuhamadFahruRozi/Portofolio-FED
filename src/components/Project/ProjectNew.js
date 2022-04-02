@@ -162,12 +162,13 @@ const ProjectNew = () => {
                         id="project-thumb" required/>
                     </div>
                     <div className="all-upload-images">
-                        <div className="preview thumbnail">
+                        <div className="preview thumbnail-images">
                         {
                             preThumb && 
                             <img 
                             src={preThumb} 
                             alt=""
+                            className="prev-images-new"
                             height="200" 
                             width="200" />
                         }
@@ -203,15 +204,13 @@ const ProjectNew = () => {
                         previewImages &&
                         previewImages.map((gbr, index) => {
                             return(
-                                <div key={index} className="preview">
+                                <div key={index} className="preview all-images">
                                     <img
                                     src={gbr} alt="" 
+                                    className="prev-images-new"
                                     height="200" 
                                     width="200"
                                     />
-                                    {/* <button onClick={() => setPrevFed(prevFed.filter((e) => e !== gbr))} >
-                                        delete
-                                    </button> */}
                                     <p>{index+1}</p>
                                 </div>
                             )

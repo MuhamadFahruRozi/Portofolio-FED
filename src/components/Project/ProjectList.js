@@ -22,7 +22,6 @@ const ProjectList = ({data, onDeletePro, user}) => {
               <div className="project__body">
                 <div className="project__image">
                     <img src={data.thumbImg_url} alt="" />
-                    
                 </div>
                   <h2 className="project__title">{data.title}</h2>
                   <p className="project__description">{data.desc}</p>

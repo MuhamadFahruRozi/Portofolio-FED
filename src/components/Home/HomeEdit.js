@@ -101,11 +101,19 @@ const HomeEdit = () => {
                         </div>
                     </div>
                 </div>
+                <div className="greeting">
+                            <h4>
+                                Hi,
+                            </h4>
+                            <h1>
+                                I'm Muhamad Fahru Rozi
+                            </h1>
+                        </div>
                 <div className="row isihome">
                     <div className="input-form">
                         <textarea value={home} 
                         onChange={handleDesc} 
-                        className="desc" id="desc" 
+                        className="desc" id="desc"
                         cols="75" rows="20" 
                         placeholder="Add Profile (min 10 letter)"></textarea>
                         {

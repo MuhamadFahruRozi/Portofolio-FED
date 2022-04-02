@@ -1,8 +1,10 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { AiFillFacebook, AiOutlineMail } from "react-icons/ai"
+import { AiFillFacebook, AiFillLinkedin } from "react-icons/ai"
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi"
 import { GiSecurityGate } from "react-icons/gi"
+import { SiGmail } from "react-icons/si"
+
 const Footer = ({ pathRoute }) => {
     const [left, setLeft] = useState(false)
     const [right, setRight] = useState(false)
@@ -41,12 +43,12 @@ const Footer = ({ pathRoute }) => {
     return (
         <div className="footer">
             <div className="socialmedia">
-                <i><AiFillFacebook className={ link1 === false ? "media-link" : "media-link active"} onClick={onlink1}/></i>
-                <i><AiOutlineMail className={ link2 === false ? "media-link" : "media-link active"} onClick={onlink2}/></i>
-                <i><AiOutlineMail className={ link3 === false ? "media-link" : "media-link active"} onClick={onlink3}/></i>
+                <i><AiFillFacebook className={ link1 === false ? "media-link fb" : "media-link fb on"} onClick={onlink1}/></i>
+                <i><SiGmail className={ link2 === false ? "media-link email" : "media-link email on"} onClick={onlink2}/></i>
+                <i><AiFillLinkedin className={ link3 === false ? "media-link linkedin" : "media-link linkedin on"} onClick={onlink3}/></i>
                 {
                     left && right === true ? 
-                    <i><GiSecurityGate onClick={() => navigate(`/${pathRoute}`)} /></i> :
+                    <i><GiSecurityGate className="gate" onClick={() => navigate(`/${pathRoute}`)} /></i> :
                     <></>
                 }
                 <i><BiLeftArrow className={ right === false ? "media-link lgl" : "media-link lgl set"} onClick={ocl} /></i>
@@ -56,13 +58,13 @@ const Footer = ({ pathRoute }) => {
                 <div className="social-link">
                     <i><BiLeftArrow className={link1 || link2 || link3 ? "arrow-left" : ""} /></i>
                     {link1 &&
-                        <a className="social-href" href="mewew">mewwwwwwwwwwwwwwwwwwwwwwwwww1</a>
+                        <a className="social-href" target="_blank" rel="noreferrer" href="https://web.facebook.com/profile.php?id=100080110477430">@Muhamad Fahru Rozi</a>
                     }
                     {link2 &&
-                        <a className="social-href" href="mewew">mewwwwwwwww</a>
+                        <a className="social-href" href="#0">muh.fahrurozi.13618@gmail.com</a>
                     }
                     {link3 &&
-                        <a className="social-href" href="mewew">mewwwwwwwwwddddddddddddddddddddddd4</a>
+                        <a className="social-href" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/muhamad-fahru-rozi-603466224">www.linkedin.com/in/muhamad-fahru-rozi-603466224</a>
                     }              
                     <i><BiRightArrow className={link1 || link2 || link3 ? "arrow-right" : ""} /></i>
                 </div>

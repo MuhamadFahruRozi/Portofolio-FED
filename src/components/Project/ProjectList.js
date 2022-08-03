@@ -23,16 +23,20 @@ const ProjectList = ({data, onDeletePro, user}) => {
                 <div className="project__image">
                     <img src={data.thumbImg_url} alt="" />
                 </div>
-                  <h2 className="project__title">{data.title}</h2>
+                  <h3 className="project__title">{data.title}</h3>
                   <p className="project__description">{data.desc}</p>
               </div>
               <div className="btn">
-                <Button className="visit__btn" disabled={data.adress === "" || null ? true : false}>
-                    Visit Website
-                </Button>
-                <Button className="code__btn" disabled={data.gitAdress === "" || null ? true : false}>
-                    Code
-                </Button>
+                <div className="visit__link">
+                  <Button className="visit__btn" onClick={() => window.open(`${data.adress}`,'_blank')} 
+                  disabled={data.adress === "" || null ? true : false}>
+                      Visit Website
+                  </Button>
+                  <Button className="code__btn" onClick={() => window.open(`${data.gitAdress}`,'_blank')}
+                  disabled={data.gitAdress === "" || null ? true : false}>
+                      Code
+                  </Button>
+                </div>
                 <Button className="view__btn" onClick={() => navigate(`/project/${data.slug}`)} >View Detail</Button>
               </div>
           </div>

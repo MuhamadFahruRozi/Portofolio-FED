@@ -640,7 +640,7 @@ label i {
   margin: 10px auto 0;
   transition: 0.3s;
   width: 350px;
-  height: 440px;
+  height: 460px;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -651,7 +651,7 @@ label i {
 
 .project__body .project__image{
   width: 348px;
-  height: 210px;
+  height: 170px;
   overflow: hidden;
 }
 
@@ -661,7 +661,19 @@ label i {
   border-radius: 5px 5px 0 0;
 }
 
-.project__body h2{
+.visit__link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+/* .link__code{
+  width: 600px;
+} */
+
+.project__body h3{
   text-align: center;
 }
 

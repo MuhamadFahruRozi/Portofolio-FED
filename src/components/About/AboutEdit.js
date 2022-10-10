@@ -66,7 +66,7 @@ const AboutEdit = ({ user }) => {
             console.log(err)
         })
         
-        timerender.current = setTimeout(() => setRefresh(data => data+1), 6000);        
+        timerender.current = setTimeout(() => setRefresh(data => data+1), 6000);
     }
 
     const onSubmitBED = async (e) => {

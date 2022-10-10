@@ -27,16 +27,17 @@ const ProjectList = ({data, onDeletePro, user}) => {
                   <p className="project__description">{data.desc}</p>
               </div>
               <div className="btn">
-                <div className="visit__link">
-                  <Button className="visit__btn" onClick={() => window.open(`${data.adress}`,'_blank')} 
+                <Button className="view__btn" onClick={() => window.open(`${data.adress}`,'_blank')} 
                   disabled={data.adress === "" || null ? true : false}>
                       Visit Website
-                  </Button>
+                </Button>
+                {/* <div className="visit__link">
+                  
                   <Button className="code__btn" onClick={() => window.open(`${data.gitAdress}`,'_blank')}
                   disabled={data.gitAdress === "" || null ? true : false}>
                       Code
                   </Button>
-                </div>
+                </div> */}
                 <Button className="view__btn" onClick={() => navigate(`/project/${data.slug}`)} >View Detail</Button>
               </div>
           </div>

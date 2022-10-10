@@ -25,7 +25,16 @@ const ProjectDetail = () => {
                     <img src={detail.thumbImg_url} alt="" />
                 </div>
                 <div className="detail">
-                    {detail.desc}
+                    <div>
+                        {detail.desc}
+                    </div>
+                    <div className="url-div">
+                        URL:
+                        <input type="text" className="url-visit-detail" value={detail.adress} />
+                        <div className="url-visit-button" onClick={() => window.open(`${detail.adress}`,'_blank')}>
+                            Visit Website
+                        </div>
+                    </div>
                 </div>
             <Carousel slides={image} key={image.pic_id} />
             </div>

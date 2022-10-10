@@ -447,6 +447,32 @@
   white-space: pre-line;
 }
 
+.url-div{
+  display: flex;
+  margin-top: 20px;
+}
+
+.url-visit-detail{
+  width: 180px;
+  margin-left: 5px;
+}
+
+.url-visit-button{
+  width: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2px;
+  border-radius: 3px;
+  background-color: rgb(96, 99, 255);
+  color: white;
+}
+
+.url-visit-button:hover{
+  background-color: rgb(124, 126, 255);
+  cursor: pointer;
+}
+
 .detail-home{
   text-align: center;
   /* text-indent: 20px; */
@@ -699,7 +725,7 @@ label i {
 
 .card .btn .view__btn{
   width: 100%;
-  margin: 10px 5% 0;
+  margin: 20px 5% 0;
   display: flex;
   justify-content: center;
 }
@@ -1073,5 +1099,24 @@ hr{
     text-align: center;
     margin: 15px 20% 0;
     white-space: pre-line;
+  }
+
+  .url-div{
+    display: flex;
+  }
+
+  .url-visit-detail{
+    width: 520px;
+    margin-left: 5px;
+  }
+
+  .url-visit-button{
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2px;
+    border-radius: 3px;
+    background-color: rgb(96, 99, 255);;
   }
 }

@@ -37,7 +37,7 @@ const About = () => {
                         <WebSkills isifed={fed} isibed={bed}/>
                     </div>
                     <hr className="res-border"/>
-                    <a href="https://drive.google.com/file/d/1kMFmrlZqeqwGjV5sROgKtZl9549O5vHz/view?usp=sharing" 
+                    <a href="" 
                     target="_blank" rel="noreferrer" className="resume-button">
                     <div className="resume">
                     Resume    

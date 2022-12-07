@@ -11,14 +11,14 @@ const About = () => {
 
     useEffect(() => {
         const getAbout = async () => {
-            const res = await axios.get('https://portofolio-api-mfr.herokuapp.com/api/about/About-144-867-936');
+            const res = await axios.get('https://web-production-0799.up.railway.app/api/about/About-144-867-936');
             setAbout(res.data.about);
             setFed(res.data.fed);
             setBed(res.data.bed)
         }
         getAbout();
         const getHome = async () => {
-            const res = await axios.get('https://portofolio-api-mfr.herokuapp.com/api/home/Home-955-60-816');
+            const res = await axios.get('https://web-production-0799.up.railway.app/api/home/Home-955-60-816');
             const myHome = res.data.pic_url;
             setPortrait(myHome);
         }

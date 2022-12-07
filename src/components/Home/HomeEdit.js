@@ -8,7 +8,7 @@ const HomeEdit = () => {
     const [preview, setPreview] = useState('')
     useEffect(() => {
         const getHome = async () => {
-            const res = await axios.get('https://portofolio-api-mfr.herokuapp.com/api/home/Home-955-60-816');
+            const res = await axios.get('https://web-production-0799.up.railway.app/api/home/Home-955-60-816');
             const myHome = res.data;
             setHome(myHome.desc);
             setPreview(myHome.pic_url);
@@ -20,7 +20,7 @@ const HomeEdit = () => {
     const changeHome = (e) => {
         e.preventDefault();
         
-        const url ='https://portofolio-api-mfr.herokuapp.com/api/home/Home-955-60-816';
+        const url ='https://web-production-0799.up.railway.app/api/home/Home-955-60-816';
 
         if(gambar === ""){
             let formData = new FormData();

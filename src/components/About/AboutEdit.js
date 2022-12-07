@@ -13,7 +13,7 @@ const AboutEdit = ({ user }) => {
     const timerender = useRef(null)
     useEffect(() => {
         const getAbout = async () => {
-            const res = await axios.get('https://portofolio-api-mfr.herokuapp.com/api/about/About-144-867-936');
+            const res = await axios.get('https://web-production-0799.up.railway.app/api/about/About-144-867-936');
             setAbout(res.data.about.desc);
             setFed(res.data.fed);
             setBed(res.data.bed)
@@ -58,7 +58,7 @@ const AboutEdit = ({ user }) => {
             formData.append('image', data)
         })
         
-        const url ='https://portofolio-api-mfr.herokuapp.com/api/about/fed';
+        const url ='https://web-production-0799.up.railway.app/api/about/fed';
 
         axios.post(url, formData).then(res => {
             alert("Front-End skill(s) successfuly added!")
@@ -77,7 +77,7 @@ const AboutEdit = ({ user }) => {
             formData.append('image', data)
         })
         
-        const url ='https://portofolio-api-mfr.herokuapp.com/api/about/bed';
+        const url ='https://web-production-0799.up.railway.app/api/about/bed';
 
         axios.post(url, formData).then(res => {
             alert("Back-End skill(s) successfuly added!")
@@ -97,7 +97,7 @@ const AboutEdit = ({ user }) => {
         let formData = new FormData();
         formData.append('desc', about);
         
-        const url ='https://portofolio-api-mfr.herokuapp.com/api/about/About-144-867-936';
+        const url ='https://web-production-0799.up.railway.app/api/about/About-144-867-936';
 
         axios.put(url, formData).then(res => {
             alert("Bio successfuly changed!")
@@ -108,13 +108,13 @@ const AboutEdit = ({ user }) => {
     }
 
     const deleteFed = (delfed) => {
-        axios.delete(`https://portofolio-api-mfr.herokuapp.com/api/about/fed/${delfed}`);
+        axios.delete(`https://web-production-0799.up.railway.app/api/about/fed/${delfed}`);
         const remainingFed = fed.filter((result) => result.slug !== delfed)
         setFed(remainingFed)
     }
 
     const deleteBed = (delbed) => {
-        axios.delete(`https://portofolio-api-mfr.herokuapp.com/api/about/bed/${delbed}`);
+        axios.delete(`https://web-production-0799.up.railway.app/api/about/bed/${delbed}`);
         const remainingBed = bed.filter((result) => result.slug !== delbed)
         setBed(remainingBed)
     }

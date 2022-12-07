@@ -19,7 +19,7 @@ const ProjectNew = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const res = await axios.get(`https://portofolio-api-mfr.herokuapp.com/api/projects/${idetail.slug}`)
+            const res = await axios.get(`https://web-production-0799.up.railway.app/api/projects/${idetail.slug}`)
             const myData = res.data.Project;
             const myImages = res.data.Image;
             setProjectID(myData.project_id)
@@ -61,7 +61,7 @@ const ProjectNew = () => {
     const AddProject = (e) => {
         e.preventDefault();
 
-        const url =`https://portofolio-api-mfr.herokuapp.com/api/projects/${idetail.slug}`;
+        const url =`https://web-production-0799.up.railway.app/api/projects/${idetail.slug}`;
 
         let formData = new FormData();
         formData.append('title', title)

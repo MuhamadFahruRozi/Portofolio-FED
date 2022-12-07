@@ -62,7 +62,7 @@ const ProjectNew = () => {
         })
         
 
-        const url ='https://portofolio-api-mfr.herokuapp.com/api/projects';
+        const url ='https://web-production-0799.up.railway.app/api/projects';
 
         axios.post(url, formData).then(res => {
             alert("Project successfuly added!")
